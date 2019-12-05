@@ -11,8 +11,6 @@ all: build
 
 build: deps
 	mkdir -p $(BUILD_DIR)
-	cd cmd/mysqldef && GOOS=$(GOOS) GOARCH=$(GOARCH) go build $(GOFLAGS) -o ../../$(BUILD_DIR)/mysqldef
-	cd cmd/psqldef && GOOS=$(GOOS) GOARCH=$(GOARCH) go build $(GOFLAGS) -o ../../$(BUILD_DIR)/psqldef
 	cd cmd/clickhousedef && GOOS=$(GOOS) GOARCH=$(GOARCH) go build $(GOFLAGS) -o ../../$(BUILD_DIR)/clickhousedef
 
 clean:
@@ -33,23 +31,13 @@ package:
 
 package-zip: build
 	mkdir -p package
-	cd $(BUILD_DIR) && zip ../../package/mysqldef_$(GOOS)_$(GOARCH).zip mysqldef
-	cd $(BUILD_DIR) && zip ../../package/psqldef_$(GOOS)_$(GOARCH).zip psqldef
 	cd $(BUILD_DIR) && zip ../../package/clickhousedef_$(GOOS)_$(GOARCH).zip clickhousedef
 
 package-targz: build
 	mkdir -p package
-	cd $(BUILD_DIR) && tar zcvf ../../package/mysqldef_$(GOOS)_$(GOARCH).tar.gz mysqldef
-	cd $(BUILD_DIR) && tar zcvf ../../package/psqldef_$(GOOS)_$(GOARCH).tar.gz psqldef
 	cd $(BUILD_DIR) && tar zcvf ../../package/clickhousedef_$(GOOS)_$(GOARCH).tar.gz clickhousedef
 
-test: test-mysqldef test-psqldef test-clickhousedef test-sqlparser
-
-test-mysqldef: deps
-	cd cmd/mysqldef && go test
-
-test-psqldef: deps
-	cd cmd/psqldef && go test
+test: test-clickhousedef test-sqlparser
 
 test-clickhousedef: deps
 	cd cmd/clickhousedef && go test
