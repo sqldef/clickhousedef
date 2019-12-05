@@ -1,4 +1,4 @@
-module github.com/chhetripradeep/sqldef
+module github.com/sqldef/clickhousedef
 
 go 1.12
 
@@ -10,4 +10,5 @@ require (
 	github.com/k0kubun/sqldef v0.5.9
 	github.com/lib/pq v1.2.0
 	golang.org/x/crypto v0.0.0-20191202143827-86a70503ff7e // indirect
+	google.golang.org/appengine v1.6.5 // indirect
 )

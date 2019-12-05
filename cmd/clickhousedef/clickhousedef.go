@@ -9,8 +9,8 @@ import (
 	"github.com/jessevdk/go-flags"
 	"github.com/k0kubun/sqldef"
 	"github.com/k0kubun/sqldef/adapter"
-	"github.com/k0kubun/sqldef/adapter/clickhouse"
 	"github.com/k0kubun/sqldef/schema"
+	"github.com/sqldef/clickhousedef/adapter/clickhouse"
 )
 
 // Return parsed options and schema filename
