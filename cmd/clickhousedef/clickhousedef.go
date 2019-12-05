@@ -95,5 +95,5 @@ func main() {
 	}
 	defer database.Close()
 
-	sqldef.Run(schema.GeneratorModeMysql, database, options)
+	sqldef.Run(schema.GeneratorModeClickHouse, database, options)
 }

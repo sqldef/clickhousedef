@@ -184,6 +184,8 @@ func parseDDL(mode GeneratorMode, ddl string) (DDL, error) {
 	var parserMode sqlparser.ParserMode
 	if mode == GeneratorModePostgres {
 		parserMode = sqlparser.ParserModePostgres
+	} else if mode == GeneratorModeClickHouse {
+		parserMode = sqlparser.ParserModeClickHouse
 	} else {
 		parserMode = sqlparser.ParserModeMysql
 	}

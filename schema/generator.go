@@ -13,6 +13,7 @@ type GeneratorMode int
 const (
 	GeneratorModeMysql = GeneratorMode(iota)
 	GeneratorModePostgres
+	GeneratorModeClickHouse
 )
 
 var (
