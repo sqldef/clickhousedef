@@ -7,10 +7,10 @@ import (
 
 	"github.com/howeyc/gopass"
 	"github.com/jessevdk/go-flags"
-	"github.com/k0kubun/sqldef"
 	"github.com/k0kubun/sqldef/adapter"
-	"github.com/k0kubun/sqldef/schema"
+	"github.com/sqldef/clickhousedef"
 	"github.com/sqldef/clickhousedef/adapter/clickhouse"
+	"github.com/sqldef/clickhousedef/schema"
 )
 
 // Return parsed options and schema filename

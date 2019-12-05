@@ -24,8 +24,8 @@ import (
 	"io"
 	"strings"
 
-	"github.com/k0kubun/sqldef/sqlparser/dependency/querypb"
-	"github.com/k0kubun/sqldef/sqlparser/dependency/sqltypes"
+	"github.com/sqldef/clickhousedef/sqlparser/dependency/querypb"
+	"github.com/sqldef/clickhousedef/sqlparser/dependency/sqltypes"
 )
 
 // Instructions for creating new types: If a type
@@ -44,7 +44,7 @@ import (
 // is the AST representation of the query. If a DDL statement
 // is partially parsed but still contains a syntax error, the
 // error is ignored and the DDL is returned anyway.
-func Parse(sql string) (Statement, error) { // NOTE: not used in sqldef anymore
+func Parse(sql string) (Statement, error) { // NOTE: not used in clickhousedef anymore
 	tokenizer := NewStringTokenizer(sql, ParserModeMysql)
 	if yyParse(tokenizer) != 0 {
 		if tokenizer.partialDDL != nil {

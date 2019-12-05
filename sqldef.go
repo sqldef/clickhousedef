@@ -8,7 +8,7 @@ import (
 	"strings"
 
 	"github.com/k0kubun/sqldef/adapter"
-	"github.com/k0kubun/sqldef/schema"
+	"github.com/sqldef/clickhousedef/schema"
 )
 
 type Options struct {

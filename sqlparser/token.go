@@ -22,8 +22,8 @@ import (
 	"fmt"
 	"io"
 
-	"github.com/k0kubun/sqldef/sqlparser/dependency/bytes2"
-	"github.com/k0kubun/sqldef/sqlparser/dependency/sqltypes"
+	"github.com/sqldef/clickhousedef/sqlparser/dependency/bytes2"
+	"github.com/sqldef/clickhousedef/sqlparser/dependency/sqltypes"
 )
 
 type ParserMode int
